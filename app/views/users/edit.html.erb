@@ -1,0 +1,15 @@
+<% content_for :title do %>
+  Edit User <%= @user.id %>
+<% end %>
+
+<h1>Editing User</h1>
+
+<% if !flash[:errors].nil? %>
+  <% flash[:errors].each do |error| %>
+    <p class='error'><%= error %></p>
+  <% end %>
+<% end %>
+
+<%= render partial: 'form' %>
+
+<%= link_to 'Show', user_path %> | <%= link_to 'Back', users_path %>
